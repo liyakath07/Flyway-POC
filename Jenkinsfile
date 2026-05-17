@@ -1,7 +1,7 @@
 pipeline {
 agent any
 
-```
+
 stages {
 
     stage('Verify Workspace') {
@@ -46,6 +46,5 @@ stages {
         }
     }
 }
-```
 
 }
