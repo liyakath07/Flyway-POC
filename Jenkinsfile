@@ -20,7 +20,7 @@ stages {
             sh '''
             docker run --rm \
               --network flyway-poc_default \
-              -v "$WORKSPACE/sql:/flyway/sql" \
+              -v /home/liya/flyway-poc/sql:/flyway/sql \
               flyway/flyway \
               -url=jdbc:postgresql://postgres:5432/appdb \
               -user=flyway \
@@ -36,7 +36,7 @@ stages {
             sh '''
             docker run --rm \
               --network flyway-poc_default \
-              -v "$WORKSPACE/sql:/flyway/sql" \
+              -v /home/liya/flyway-poc/sql:/flyway/sql \
               flyway/flyway \
               -url=jdbc:postgresql://postgres:5432/appdb \
               -user=flyway \
@@ -47,5 +47,6 @@ stages {
         }
     }
 }
+
 
 }
