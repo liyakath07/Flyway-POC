@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-
 stages {
 
     stage('Verify Workspace') {
@@ -26,6 +25,7 @@ stages {
               -url=jdbc:postgresql://postgres:5432/appdb \
               -user=flyway \
               -password=flyway123 \
+              -locations=filesystem:/flyway/sql \
               validate
             '''
         }
@@ -41,6 +41,7 @@ stages {
               -url=jdbc:postgresql://postgres:5432/appdb \
               -user=flyway \
               -password=flyway123 \
+              -locations=filesystem:/flyway/sql \
               migrate
             '''
         }
